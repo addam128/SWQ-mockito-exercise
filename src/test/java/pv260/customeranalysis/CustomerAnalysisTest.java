@@ -161,10 +161,10 @@ public class CustomerAnalysisTest {
 
         verify(storage, Mockito.times(2)).persist(varArgs.capture());
 
-        assertThat(varArgs.getAllValues().size() != 2);
+        assertThat(varArgs.getAllValues().size()).isEqualTo(2);
 
-        assertThat(varArgs.getAllValues().get(0).getCustomer() != customerOne);
-        assertThat(varArgs.getAllValues().get(1).getCustomer() != customerTwo);
+        assertThat(varArgs.getAllValues().get(0).getCustomer()).isEqualTo(customerOne);
+        assertThat(varArgs.getAllValues().get(1).getCustomer()).isEqualTo(customerTwo);
       
     }
 
